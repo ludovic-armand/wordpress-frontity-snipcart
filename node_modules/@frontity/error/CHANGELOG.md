@@ -1,0 +1,25 @@
+# @frontity/error
+
+## 0.1.3
+
+### Patch Changes
+
+- [`b41175d0`](https://github.com/frontity/frontity/commit/b41175d0f5df9ca95fc449ca1a0eca6649f1bccf) [#683](https://github.com/frontity/frontity/pull/683) Thanks [@cristianbote](https://github.com/cristianbote)! - Reverts the preinstall hook added for development workflows.
+
+## 0.1.2
+
+### Patch Changes
+
+- [`5f329dab`](https://github.com/frontity/frontity/commit/5f329dabe9d67d0b3664938865491674ef798433) [#655](https://github.com/frontity/frontity/pull/655) Thanks [@mburridge](https://github.com/mburridge)! - Fix broken links in README files.
+
+## 0.1.1
+
+### Patch Changes
+
+- [`fb67272b`](https://github.com/frontity/frontity/commit/fb67272bd8a3dfff00868af394484ec09f1e0785) [#464](https://github.com/frontity/frontity/pull/464) Thanks [@juanmaguitar](https://github.com/juanmaguitar)! - Add proper README.
+
+## 0.1.0
+
+### Minor Changes
+
+- [`43cf2305`](https://github.com/frontity/frontity/commit/43cf230526ed810c3778c830e41eb26ef2c53bc3) [#351](https://github.com/frontity/frontity/pull/351) Thanks [@luisherranz](https://github.com/luisherranz)! - Use an options object as the second parameter of the `error` function to keep consistency with the rest of the Frontity APIs.

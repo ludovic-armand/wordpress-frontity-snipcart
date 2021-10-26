@@ -1,0 +1,145 @@
+import { createStore, InitializedStore } from "@frontity/connect";
+import { Response as NodeResponse } from "node-fetch";
+import clone from "clone-deep";
+import wpSource from "../../";
+import { Packages } from "../../../types";
+import populate from "../populate";
+import posts from "../handlers/__tests__/mocks/post-archive/posts.json";
+import postsSubdir from "../handlers/__tests__/mocks/post-archive/posts-subdir.json";
+import cpts from "../handlers/__tests__/mocks/cpt-archive/cpts.json";
+
+const initStore = (): InitializedStore<Packages> => {
+  const config: Packages = clone(wpSource());
+  config.state.source.url = "https://test.frontity.org";
+  config.state.frontity = {};
+  return createStore(config);
+};
+
+// Use Response from "node-fetch" to mock response objects,
+// but with "lib.dom.d.ts" Response type.
+const mockResponse = (body): Response =>
+  (new NodeResponse(JSON.stringify(body)) as unknown) as Response;
+
+describe("populate", () => {
+  test("adds posts and embedded into state", async () => {
+    const { state } = initStore();
+    const response = mockResponse(posts);
+    const result = await populate({ state, response });
+
+    expect(result).toMatchSnapshot();
+    expect(state.source).toMatchSnapshot();
+  });
+
+  test("does not overwrite added entities", async () => {
+    const { state } = initStore();
+
+    // Add Category 1
+    await populate({
+      state,
+      response: mockResponse([
+        {
+          id: 1,
+          count: 5,
+          link: "https://test.frontity.org/category/cat-1/",
+          slug: "cat-1",
+          taxonomy: "category",
+          description: "This is the Category 1",
+          parent: 0,
+        },
+      ]),
+    });
+
+    // Try to overwrite Category 1
+    await populate({
+      state,
+      response: mockResponse({
+        id: 1,
+        link: "https://test.frontity.org/category/cat-1/",
+        slug: "cat-1",
+        taxonomy: "category",
+      }),
+    });
+
+    expect(state.source.category[1].description).toBe("This is the Category 1");
+    expect(state.source.category[1].count).toBe(5);
+  });
+
+  test("overwrite entities if `force` is true", async () => {
+    const { state } = initStore();
+
+    // Add Category 1 with missing properties
+    await populate({
+      state,
+      response: mockResponse([
+        {
+          id: 1,
+          link: "https://test.frontity.org/category/cat-1/",
+          slug: "cat-1",
+          taxonomy: "category",
+          count: 1,
+        },
+      ]),
+    });
+
+    // Overwrite Category 1 using `force` = true
+    await populate({
+      state,
+      response: mockResponse({
+        id: 1,
+        count: 5,
+        link: "https://test.frontity.org/category/cat-1/",
+        slug: "cat-1",
+        taxonomy: "category",
+        description: "This is the Category 1",
+      }),
+      force: true,
+    });
+
+    expect(state.source.category[1].description).toBe("This is the Category 1");
+    expect(state.source.category[1].count).toBe(5);
+  });
+
+  test("removes WP API path from links", async () => {
+    const { state } = initStore();
+    state.source.url = "https://test.frontity.org/subdirectory/";
+
+    const response = mockResponse(postsSubdir);
+    const result = await populate({ state, response });
+
+    expect(result).toMatchSnapshot();
+    expect(state.source).toMatchSnapshot();
+  });
+
+  test("transforms links if subdirectory is specified", async () => {
+    const { state } = initStore();
+    state.source.url = "https://test.frontity.org/subdirectory/";
+
+    const response = mockResponse(postsSubdir);
+    const subdirectory = "/blog/";
+    const result = await populate({ state, response, subdirectory });
+
+    expect(result).toMatchSnapshot();
+    expect(state.source).toMatchSnapshot();
+  });
+
+  test("transforms links if subdirectory is specified in `state.frontity.url`", async () => {
+    const { state } = initStore();
+    state.frontity.url = "https://final-domain.com/blog/";
+    state.source.url = "https://test.frontity.org/subdirectory/";
+
+    const response = mockResponse(postsSubdir);
+    const result = await populate({ state, response });
+
+    expect(result).toMatchSnapshot();
+    expect(state.source).toMatchSnapshot();
+  });
+
+  test("add new custom post types & taxonomies to the state", async () => {
+    const { state } = initStore();
+    const response = mockResponse(cpts);
+    const result = await populate({ state, response });
+
+    expect(result).toMatchSnapshot();
+    expect(state.source).toMatchSnapshot();
+  });
+});

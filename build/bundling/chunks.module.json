@@ -147,7 +147,7 @@
         "wordpress-frontity-snipcart"
       ],
       "info": {},
-      "emitted": true
+      "emitted": false
     }
   ],
   "filteredAssets": 0,

@@ -6,7 +6,7 @@ import FontFaces from "./styles/font-faces";
 import Header from "./header";
 import Archive from "./archive";
 import Loading from "./loading";
-import Post from "./post";
+import Post from "./post/post";
 import SkipLink from "./styles/skip-link";
 import MetaTitle from "./page-meta-title";
 import PageError from "./page-error";

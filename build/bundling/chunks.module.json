@@ -1,36 +1,22 @@
 {
   "errors": [],
   "warnings": [],
-  "hash": "260b0457e070f4c85c9b",
+  "hash": "2c0d6a4c1ca9093adfa8",
   "publicPath": "/static/",
   "outputPath": "/Users/Ludovic/Documents/GitHub/wordpress-frontity-snipcart/build/static",
   "assetsByChunkName": {
     "archive": "archive.module.js",
-    "archive~post": "archive~post.module.js",
-    "post": "post.module.js",
     "wordpress-frontity-snipcart": "wordpress-frontity-snipcart.module.js"
   },
   "assets": [
     {
       "name": "archive.module.js",
-      "size": 86602,
+      "size": 90562,
       "chunks": [
         "archive"
       ],
       "chunkNames": [
         "archive"
-      ],
-      "info": {},
-      "emitted": false
-    },
-    {
-      "name": "archive~post.module.js",
-      "size": 159395,
-      "chunks": [
-        "archive~post"
-      ],
-      "chunkNames": [
-        "archive~post"
       ],
       "info": {},
       "emitted": false
@@ -126,20 +112,8 @@
       "emitted": false
     },
     {
-      "name": "post.module.js",
-      "size": 37229,
-      "chunks": [
-        "post"
-      ],
-      "chunkNames": [
-        "post"
-      ],
-      "info": {},
-      "emitted": false
-    },
-    {
       "name": "wordpress-frontity-snipcart.module.js",
-      "size": 7539302,
+      "size": 7663479,
       "chunks": [
         "wordpress-frontity-snipcart"
       ],
@@ -164,25 +138,17 @@
     },
     "archive": {
       "chunks": [
-        "archive~post",
         "archive"
       ],
       "assets": [
-        "archive~post.module.js",
         "archive.module.js"
       ],
       "children": {},
       "childAssets": {}
     },
     "post": {
-      "chunks": [
-        "archive~post",
-        "post"
-      ],
-      "assets": [
-        "archive~post.module.js",
-        "post.module.js"
-      ],
+      "chunks": [],
+      "assets": [],
       "children": {},
       "childAssets": {}
     }
@@ -193,18 +159,6 @@
       "id": "archive",
       "files": [
         "archive.module.js"
-      ]
-    },
-    {
-      "id": "archive~post",
-      "files": [
-        "archive~post.module.js"
-      ]
-    },
-    {
-      "id": "post",
-      "files": [
-        "post.module.js"
       ]
     },
     {

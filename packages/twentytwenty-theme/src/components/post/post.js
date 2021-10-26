@@ -10,9 +10,6 @@ import {
   PostCaption,
   SectionContainer,
 } from "./post-item";
-import PostCategories from "./post-categories";
-import PostMeta from "./post-meta";
-import PostTags from "./post-tags";
 
 /**
  * The Post component that the TwentyTwenty theme uses for rendering any kind of
@@ -42,25 +39,6 @@ const Post = ({ state, actions, libraries }) => {
   // Get the html2react component.
   const Html2React = libraries.html2react.Component;
 
-  // Get all categories
-  const allCategories = state.source.category;
-
-  /**
-   * The item's categories is an array of each category id. So, we'll look up
-   * the details of each category in allCategories.
-   */
-  const categories =
-    post.categories && post.categories.map((catId) => allCategories[catId]);
-
-  // Get all tags
-  const allTags = state.source.tag;
-
-  /**
-   * The item's categories is an array of each tag id. So, we'll look up the
-   * details of each tag in allTags.
-   */
-  const tags = post.tags && post.tags.map((tagId) => allTags[tagId]);
-
   /**
    * Once the post has loaded in the DOM, prefetch both the
    * home posts and the list component so if the user visits
@@ -76,7 +54,6 @@ const Post = ({ state, actions, libraries }) => {
       <Header>
         <SectionContainer>
           {/* If the post has categories, render the categories */}
-          {post.categories && <PostCategories categories={categories} />}
           <PostTitle
             as="h1"
             className="heading-size-1"
@@ -114,8 +91,6 @@ const Post = ({ state, actions, libraries }) => {
           <EntryContent>
             <Html2React html={post.content.rendered} />
           </EntryContent>
-          {/* If the post has tags, render it */}
-          {post.tags && <PostTags tags={tags} />}
         </PostInner>
       )}
     </PostArticle>

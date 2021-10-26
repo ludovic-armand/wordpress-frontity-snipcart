@@ -1,16 +1,12 @@
 import { connect, styled } from "frontity";
 import Link from "../link";
 import FeaturedMedia from "./featured-media";
-import PostMeta from "./post-meta";
-import PostCategories from "./post-categories";
-import PostTags from "./post-tags";
 
 /**
  * Article Component.
  *
  * It renders the preview of a blog post. Each blog post contains:
  * - Title: clickable title of the post.
- * - Author: name of author and published date.
  * - FeaturedMedia: the featured image/video of the post.
  *
  * @param props.state - The Frontity state.
@@ -28,34 +24,13 @@ const PostItem = ({
   showExcerpt,
   showMedia = true,
 }) => {
-  // Get all categories
-  const allCategories = state.source.category;
 
-  /**
-   * The item's categories is an array of each category id. So, we'll look up
-   * the details of each category in allCategories.
-   */
-  const categories =
-    item.categories && item.categories.map((catId) => allCategories[catId]);
-
-  // Get all tags
-  const allTags = state.source.tag;
-
-  /**
-   * The item's categories is an array of each tag id. So, we'll look up the
-   * details of each tag in allTags.
-   */
-  const tags = item.tags && item.tags.map((tagId) => allTags[tagId]);
-
-  const content = showExcerpt ? item.excerpt : item.content;
+  const post = state.source[item.type][item.id];
   const { Component: Html2React } = libraries.html2react;
   return (
     <Post>
       <PostHeader>
         <SectionContainer>
-          {/* If the post has categories, render the categories */}
-          {item.categories && <PostCategories categories={categories} />}
-
           {/* The clickable heading for the post */}
           <PostLink link={item.link}>
             <PostItemTitle
@@ -63,9 +38,6 @@ const PostItem = ({
               dangerouslySetInnerHTML={{ __html: item.title.rendered }}
             />
           </PostLink>
-
-          {/* The post's metadata like author, publish date, and comments */}
-          <PostMeta item={item} />
         </SectionContainer>
       </PostHeader>
 
@@ -78,15 +50,13 @@ const PostItem = ({
       )}
 
       {/* If the post has an excerpt (short summary text), we render it */}
-      {content && (
+      {post && post.content && (
         <PostInner size="thin">
           {/* TODO: Change this to HTML2React */}
           {/* dangerouslySetInnerHTML={{ __html: content.rendered }} */}
           <EntryContent>
-            <Html2React html={content.rendered} />
+            <Html2React html={post.content.rendered} />
           </EntryContent>
-          {/* If the post has tags, render it */}
-          {item.tags && <PostTags tags={tags} />}
         </PostInner>
       )}
     </Post>

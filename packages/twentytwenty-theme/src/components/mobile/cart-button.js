@@ -1,4 +1,4 @@
-import { connect } from "frontity";
+import { connect, styled } from "frontity";
 import {
   CartToggle,
   ToggleWrapper,
@@ -9,11 +9,20 @@ const MobileCartButton = ({ state, actions }) => {
 
   return (
     <ToggleWrapper>
-      <CartToggle>
-        <button class="snipcart-checkout">🛒</button>
-      </CartToggle>
+      <ShowMobile>
+        <CartToggle>
+          <button class="snipcart-checkout">🛒</button>
+        </CartToggle>
+      </ShowMobile>
     </ToggleWrapper>
   );
 };
 
+export const ShowMobile = styled.div`
+  display: inline-block;
+
+  @media (min-width: 1000px) {
+    display: none;
+  }
+`;
 export default connect(MobileCartButton);

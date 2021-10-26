@@ -4,7 +4,12 @@ const settings = {
     "frontity": {
       "url": "https://wordpress-snipcart.herokuapp.com/",
       "title": "Snipcart Hot Sauce Shop",
-      "description": "The Hottest Hot Sauce Shop!"
+      "description": "The Hottest Hot Sauce Shop!",
+      "postTypes": [{
+        type: "products",
+        endpoint: "products",
+        archive: "/products"
+      }]
     }
   },
   "packages": [
@@ -33,7 +38,7 @@ const settings = {
       "name": "@frontity/wp-source",
       "state": {
         "source": {
-          "homepage": "/products"
+          "api": "https://wordpress-snipcart.herokuapp.com/wp-json"
         }
       }
     },

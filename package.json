@@ -1,5 +1,5 @@
 {
-  "name": "wordpress-frontity-snipcart",
+  "name": "wordpress",
   "version": "1.0.0",
   "private": true,
   "description": "Frontity project",
@@ -22,6 +22,6 @@
     "@frontity/wp-source": "^1.11.6",
     "@frontity/tiny-router": "^1.4.4",
     "@frontity/html2react": "^1.7.0",
-    "@frontity/mars-theme": "./packages/mars-theme"
+    "@frontity/twentytwenty-theme": "./packages/twentytwenty-theme"
   }
 }

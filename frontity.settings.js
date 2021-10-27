@@ -2,7 +2,7 @@ const settings = {
   "name": "wordpress-frontity-snipcart",
   "state": {
     "frontity": {
-      "url": "https://wordpress-snipcart.herokuapp.com/",
+      "url": "https://snipcart-hotsauce-shop.azurewebsites.net/",
       "title": "Snipcart Hot Sauce Shop",
       "description": "The Hottest Hot Sauce Shop!"
     }
@@ -33,7 +33,7 @@ const settings = {
       "name": "@frontity/wp-source",
       "state": {
         "source": {
-          "api": "https://wordpress-snipcart.herokuapp.com/wp-json"
+          "api": "https://snipcart-hotsauce-shop.azurewebsites.net/wp-json"
         }
       }
     },

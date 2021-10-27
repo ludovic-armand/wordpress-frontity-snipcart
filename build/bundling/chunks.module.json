@@ -1,7 +1,7 @@
 {
   "errors": [],
   "warnings": [],
-  "hash": "561684df663949826adf",
+  "hash": "aa0e5148d5619e669724",
   "publicPath": "/static/",
   "outputPath": "/Users/Ludovic/Documents/GitHub/wordpress-frontity-snipcart/build/static",
   "assetsByChunkName": {
@@ -113,7 +113,7 @@
     },
     {
       "name": "wordpress-frontity-snipcart.module.js",
-      "size": 7317250,
+      "size": 7322088,
       "chunks": [
         "wordpress-frontity-snipcart"
       ],

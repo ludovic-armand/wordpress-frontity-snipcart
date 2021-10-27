@@ -33,7 +33,7 @@ const settings = {
       "name": "@frontity/wp-source",
       "state": {
         "source": {
-          "api": "https://snipcart-hotsauce-shop.azurewebsites.net/wp-json"
+          "api": "https://snipcart-hotsauce-shop.azurewebsites.net/wp-json/"
         }
       }
     },

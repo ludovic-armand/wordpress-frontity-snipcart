@@ -10,8 +10,8 @@ const CartButton = ({ state, actions }) => {
   return (
     <HeaderToggle>
       <ToggleWrapper>
-        <BaseToggle>
-            <button class="snipcart-checkout">🛒</button>
+        <BaseToggle className="snipcart-checkout">
+          🛒
         </BaseToggle>
       </ToggleWrapper>
     </HeaderToggle>

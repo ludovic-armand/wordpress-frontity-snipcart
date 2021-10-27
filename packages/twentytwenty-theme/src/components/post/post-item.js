@@ -51,7 +51,16 @@ const PostItem = ({
       {post && post.content && (
         <PostInner size="thin">
           <EntryContent>
-            <Html2React html={post.content.rendered} />
+            <img src={post.acf.image} />
+            <div> {post.acf.description} </div>
+            <div> ${post.acf.price} </div>
+            <button className="snipcart-add-item"
+              data-item-name={post.acf.product_name}
+              data-item-price={post.acf.price}
+              data-item-image={post.acf.image}
+              data-item-id={post.id}
+              data-item-description={post.acf.description}
+            >Add to cart</button>
           </EntryContent>
         </PostInner>
       )}

@@ -18,7 +18,6 @@ import PageError from "./page-error";
 const Theme = ({ state }) => {
   // Get information about the current URL.
   const data = state.source.get(state.router.link);
-  const options = state.source.get("acf-options-page");
 
   return (
     <>

@@ -8,7 +8,7 @@ const acfOptionsHandler = {
   func: async ({ route, state, libraries }) => {
     // 1. Get ACF option page from REST API.
     const response = await libraries.source.api.get({
-      endpoint: `/acf/v3/options/options`
+      endpoint: `/acf/v3/posts`
     });
     const option = await response.json();
 
@@ -82,7 +82,7 @@ const twentyTwentyTheme = {
         // This will make Frontity wait until the ACF options
         // page has been fetched and it is available
         // using state.source.get("acf-options-page").
-        await actions.source.fetch("acf-options-page");
+        await actions.source.fetch("posts");
       },
       openMobileMenu: ({ state }) => {
         state.theme.isMobileMenuOpen = true;
@@ -99,6 +99,9 @@ const twentyTwentyTheme = {
     },
   },
   libraries: {
+    source: {
+      handlers: [acfOptionsHandler]
+    },
     html2react: {
       /**
        * Add a processor to `html2react` so it processes the `<img>` tags

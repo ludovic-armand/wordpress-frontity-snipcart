@@ -603,6 +603,21 @@ const snipcartStyle = (colors) => css`
     justify-content: center;
   }
 `;
+const productStyle = (colors) => css`
+  img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    max-width: 100px;
+    padding: 10px;
+
+  }
+  .product {
+    text-align: center;
+    padding: 5px;
+  }
+  `;
 
 
 /**
@@ -625,6 +640,7 @@ const globalStyle = (colors) =>
     mediaStyle(colors),
     tableStyles(colors),
     snipcartStyle(colors),
+    productStyle(colors),
   ]);
 
 export default globalStyle;

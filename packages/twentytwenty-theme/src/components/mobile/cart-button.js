@@ -10,8 +10,8 @@ const MobileCartButton = ({ state, actions }) => {
   return (
     <ToggleWrapper>
       <ShowMobile>
-        <CartToggle>
-          <button class="snipcart-checkout">🛒</button>
+        <CartToggle className="snipcart-checkout">
+          🛒
         </CartToggle>
       </ShowMobile>
     </ToggleWrapper>

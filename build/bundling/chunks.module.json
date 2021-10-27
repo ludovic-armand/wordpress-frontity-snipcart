@@ -1,12 +1,15 @@
 {
   "errors": [],
   "warnings": [],
-  "hash": "aa0e5148d5619e669724",
+  "hash": "c9d8cdcb1dcb515c1a79",
   "publicPath": "/static/",
   "outputPath": "/Users/Ludovic/Documents/GitHub/wordpress-frontity-snipcart/build/static",
   "assetsByChunkName": {
     "archive": "archive.module.js",
-    "wordpress-frontity-snipcart": "wordpress-frontity-snipcart.module.js"
+    "wordpress-frontity-snipcart": [
+      "wordpress-frontity-snipcart.module.js",
+      "wordpress-frontity-snipcart.cc8f44691695e33182c2.hot-update.js"
+    ]
   },
   "assets": [
     {
@@ -19,6 +22,17 @@
         "archive"
       ],
       "info": {},
+      "emitted": false
+    },
+    {
+      "name": "cc8f44691695e33182c2.hot-update.json",
+      "size": 69,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {
+        "hotModuleReplacement": true,
+        "immutable": true
+      },
       "emitted": false
     },
     {
@@ -112,8 +126,23 @@
       "emitted": false
     },
     {
+      "name": "wordpress-frontity-snipcart.cc8f44691695e33182c2.hot-update.js",
+      "size": 231625,
+      "chunks": [
+        "wordpress-frontity-snipcart"
+      ],
+      "chunkNames": [
+        "wordpress-frontity-snipcart"
+      ],
+      "info": {
+        "hotModuleReplacement": true,
+        "immutable": true
+      },
+      "emitted": false
+    },
+    {
       "name": "wordpress-frontity-snipcart.module.js",
-      "size": 7322088,
+      "size": 7352192,
       "chunks": [
         "wordpress-frontity-snipcart"
       ],
@@ -131,7 +160,8 @@
         "wordpress-frontity-snipcart"
       ],
       "assets": [
-        "wordpress-frontity-snipcart.module.js"
+        "wordpress-frontity-snipcart.module.js",
+        "wordpress-frontity-snipcart.cc8f44691695e33182c2.hot-update.js"
       ],
       "children": {},
       "childAssets": {}
@@ -164,7 +194,8 @@
     {
       "id": "wordpress-frontity-snipcart",
       "files": [
-        "wordpress-frontity-snipcart.module.js"
+        "wordpress-frontity-snipcart.module.js",
+        "wordpress-frontity-snipcart.cc8f44691695e33182c2.hot-update.js"
       ]
     }
   ]

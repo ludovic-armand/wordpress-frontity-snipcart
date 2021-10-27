@@ -51,7 +51,7 @@ The theme options can be specified in the `state.theme` property.
         footerBg: "#ffffff",
         bodyBg: "#f5efe0"
       },
-      showSearchInHeader: true,
+      showCartInHeader: true,
       showAllContentOnArchive: false,
       featuredMedia: {
         showOnArchive: true,

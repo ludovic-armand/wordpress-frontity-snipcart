@@ -44,6 +44,38 @@ const FontFace = ({ state }) => {
           font-display: "swap";
           src: url(${font[2]}) format("woff2");
         }
+
+        .snipcart-add-item {
+          padding: 10px;
+          border-radius: 4px;
+          cursor: pointer;
+          transition: .2s ease-out;
+          transition-property: color,border-color,background-color,box-shadow;
+          cursor: pointer;
+          color: white;
+          background-color: #1a4db3;
+        }
+        .snipcart-add-item:hover {
+          box-shadow: var(--shadow-buttonPrimary-hover,0 10px 4px -8px rgba(0,0,0,.5));
+          background-color: #0d59f2;
+        }
+
+        .snipcart-checkout {
+          padding: 5px;
+          cursor: pointer;
+          background: none;
+        }
+
+        .product-price {
+          display: flex;
+          align-items: center;
+          font-size: 1.5em;
+        }
+
+        .SectionContainer {
+          display: flex;
+          justify-content: center;
+        }
       `}
     />
   );

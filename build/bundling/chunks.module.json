@@ -1,14 +1,28 @@
 {
   "errors": [],
   "warnings": [],
-  "hash": "2c0d6a4c1ca9093adfa8",
+  "hash": "3d419d2107f085279ff1",
   "publicPath": "/static/",
   "outputPath": "/Users/Ludovic/Documents/GitHub/wordpress-frontity-snipcart/build/static",
   "assetsByChunkName": {
     "archive": "archive.module.js",
-    "wordpress-frontity-snipcart": "wordpress-frontity-snipcart.module.js"
+    "wordpress-frontity-snipcart": [
+      "wordpress-frontity-snipcart.module.js",
+      "wordpress-frontity-snipcart.6b2232a80212160464ce.hot-update.js"
+    ]
   },
   "assets": [
+    {
+      "name": "6b2232a80212160464ce.hot-update.json",
+      "size": 69,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {
+        "hotModuleReplacement": true,
+        "immutable": true
+      },
+      "emitted": false
+    },
     {
       "name": "archive.module.js",
       "size": 90562,
@@ -112,8 +126,23 @@
       "emitted": false
     },
     {
+      "name": "wordpress-frontity-snipcart.6b2232a80212160464ce.hot-update.js",
+      "size": 79145,
+      "chunks": [
+        "wordpress-frontity-snipcart"
+      ],
+      "chunkNames": [
+        "wordpress-frontity-snipcart"
+      ],
+      "info": {
+        "hotModuleReplacement": true,
+        "immutable": true
+      },
+      "emitted": false
+    },
+    {
       "name": "wordpress-frontity-snipcart.module.js",
-      "size": 7663479,
+      "size": 7291674,
       "chunks": [
         "wordpress-frontity-snipcart"
       ],
@@ -131,7 +160,8 @@
         "wordpress-frontity-snipcart"
       ],
       "assets": [
-        "wordpress-frontity-snipcart.module.js"
+        "wordpress-frontity-snipcart.module.js",
+        "wordpress-frontity-snipcart.6b2232a80212160464ce.hot-update.js"
       ],
       "children": {},
       "childAssets": {}
@@ -164,7 +194,8 @@
     {
       "id": "wordpress-frontity-snipcart",
       "files": [
-        "wordpress-frontity-snipcart.module.js"
+        "wordpress-frontity-snipcart.module.js",
+        "wordpress-frontity-snipcart.6b2232a80212160464ce.hot-update.js"
       ]
     }
   ]

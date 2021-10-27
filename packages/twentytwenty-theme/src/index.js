@@ -29,7 +29,7 @@ const twentyTwentyTheme = {
         bodyBg: "#f1f2f4",
       },
       // Whether to show the search button in page header
-      showSearchInHeader: true,
+      showCartInHeader: true,
       // Menu links to display in the header
       menu: [],
       // State for the menu on mobile

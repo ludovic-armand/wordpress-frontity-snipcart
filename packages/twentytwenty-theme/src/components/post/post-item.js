@@ -21,7 +21,6 @@ const PostItem = ({
   state,
   libraries,
   item,
-  showExcerpt,
   showMedia = true,
 }) => {
 
@@ -49,11 +48,8 @@ const PostItem = ({
         <FeaturedMedia id={item.featured_media} />
       )}
 
-      {/* If the post has an excerpt (short summary text), we render it */}
       {post && post.content && (
         <PostInner size="thin">
-          {/* TODO: Change this to HTML2React */}
-          {/* dangerouslySetInnerHTML={{ __html: content.rendered }} */}
           <EntryContent>
             <Html2React html={post.content.rendered} />
           </EntryContent>

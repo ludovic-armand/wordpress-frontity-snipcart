@@ -2,7 +2,6 @@ import { connect, styled } from "frontity";
 import Link from "./link";
 import Navigation from "./navigation/navigation";
 import CartButton from "./cart-button";
-import SearchModal from "./search/search-modal";
 import MobileCartButton from "./mobile/cart-button";
 import MobileMenuButton from "./mobile/menu-button";
 import MobileMenuModal from "./mobile/menu-modal";
@@ -16,8 +15,7 @@ const Header = ({ state }) => {
       <HeaderInner>
         <TitleWrapper>
           {/* Cart button on mobile */}
-          {state.theme.showSearchInHeader && <MobileCartButton />}
-
+          <MobileCartButton />
           {/* Heading and Description of the site */}
           <TitleGroup>
             <SiteTitle>
@@ -34,12 +32,10 @@ const Header = ({ state }) => {
         <HeaderNavigationWrapper>
           {/* Desktop navigation links */}
           <Navigation />
-          {/* Desktop search button */}
-          {state.theme.showSearchInHeader && <CartButton />}
+          {/* Desktop cart button */}
+          <CartButton />
         </HeaderNavigationWrapper>
       </HeaderInner>
-      {/* Global search modal */}
-      <SearchModal />
     </PageHeader>
   );
 };

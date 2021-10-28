@@ -10,6 +10,7 @@ import {
   PostCaption,
   SectionContainer,
 } from "./post-item";
+import ProductCard from "./../ecommerce/product-card";
 
 /**
  * The Post component that the TwentyTwenty theme uses for rendering any kind of
@@ -39,6 +40,10 @@ const Post = ({ state, actions, libraries }) => {
 
   // Get the html2react component.
   const Html2React = libraries.html2react.Component;
+
+  const isProduct = (post) => {
+    return !!post.acf.price;
+  }
 
   /**
    * Once the post has loaded in the DOM, prefetch both the
@@ -87,24 +92,21 @@ const Post = ({ state, actions, libraries }) => {
       )}
 
       {/* If the post has content, we render it */}
-      {post.content && (
+      {post.content && isProduct(post) && (
         <PostInner size="thin">
           <EntryContent>
-          <article>
-            <img src={post.acf.image} />
-            <div> {post.acf.description} </div>
-            <div>
-              <strong> ${post.acf.price} </strong>
-            </div>
-            <button className="snipcart-add-item"
-              data-item-name={post.acf.product_name}
-              data-item-price={post.acf.price}
-              data-item-image={post.acf.image}
-              data-item-id={post.id}
-              data-item-description={post.acf.description}
-            >Add to cart</button>
-          </article>
+            <ProductCard post={post} />
           </EntryContent>
+        </PostInner>
+      )}
+
+      {post.content && !isProduct(post) && (
+        <PostInner size="thin">
+          <EntryContent>
+            <Html2React html={post.content.rendered} />
+          </EntryContent>
+          {/* If the post has tags, render it */}
+          {post.tags && <PostTags tags={tags} />}
         </PostInner>
       )}
     </PostArticle>

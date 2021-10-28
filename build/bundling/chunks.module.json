@@ -1,19 +1,19 @@
 {
   "errors": [],
   "warnings": [],
-  "hash": "84d4dc609ce4fa8654f7",
+  "hash": "4488cff10ba42105fbd4",
   "publicPath": "/static/",
   "outputPath": "/Users/Ludovic/Documents/GitHub/wordpress-frontity-snipcart/build/static",
   "assetsByChunkName": {
     "archive": "archive.module.js",
     "wordpress-frontity-snipcart": [
       "wordpress-frontity-snipcart.module.js",
-      "wordpress-frontity-snipcart.846c5a655771c69ef1ce.hot-update.js"
+      "wordpress-frontity-snipcart.1bbb423f5c3a731eac4c.hot-update.js"
     ]
   },
   "assets": [
     {
-      "name": "846c5a655771c69ef1ce.hot-update.json",
+      "name": "1bbb423f5c3a731eac4c.hot-update.json",
       "size": 69,
       "chunks": [],
       "chunkNames": [],
@@ -126,8 +126,8 @@
       "emitted": false
     },
     {
-      "name": "wordpress-frontity-snipcart.846c5a655771c69ef1ce.hot-update.js",
-      "size": 232529,
+      "name": "wordpress-frontity-snipcart.1bbb423f5c3a731eac4c.hot-update.js",
+      "size": 34031,
       "chunks": [
         "wordpress-frontity-snipcart"
       ],
@@ -142,7 +142,7 @@
     },
     {
       "name": "wordpress-frontity-snipcart.module.js",
-      "size": 7355582,
+      "size": 7355375,
       "chunks": [
         "wordpress-frontity-snipcart"
       ],
@@ -161,7 +161,7 @@
       ],
       "assets": [
         "wordpress-frontity-snipcart.module.js",
-        "wordpress-frontity-snipcart.846c5a655771c69ef1ce.hot-update.js"
+        "wordpress-frontity-snipcart.1bbb423f5c3a731eac4c.hot-update.js"
       ],
       "children": {},
       "childAssets": {}
@@ -195,7 +195,7 @@
       "id": "wordpress-frontity-snipcart",
       "files": [
         "wordpress-frontity-snipcart.module.js",
-        "wordpress-frontity-snipcart.846c5a655771c69ef1ce.hot-update.js"
+        "wordpress-frontity-snipcart.1bbb423f5c3a731eac4c.hot-update.js"
       ]
     }
   ]

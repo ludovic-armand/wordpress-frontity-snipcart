@@ -1,6 +1,7 @@
 import { connect, styled } from "frontity";
 import Link from "../link";
 import FeaturedMedia from "./featured-media";
+import ProductCard from "./../ecommerce/product-card";
 
 /**
  * Article Component.
@@ -51,20 +52,7 @@ const PostItem = ({
       {post && post.content && (
         <PostInner size="thin">
           <EntryContent>
-            <article>
-              <img src={post.acf.image} />
-              <div> {post.acf.description} </div>
-              <div>
-                <strong> ${post.acf.price} </strong>
-              </div>
-              <button className="snipcart-add-item"
-                data-item-name={post.acf.product_name}
-                data-item-price={post.acf.price}
-                data-item-image={post.acf.image}
-                data-item-id={post.id}
-                data-item-description={post.acf.description}
-              >Add to cart</button>
-            </article>
+            <ProductCard post={post} />
           </EntryContent>
         </PostInner>
       )}

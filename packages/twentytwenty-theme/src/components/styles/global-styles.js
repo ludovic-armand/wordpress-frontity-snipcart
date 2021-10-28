@@ -613,9 +613,14 @@ const productStyle = (colors) => css`
     padding: 10px;
 
   }
-  .product {
+
+  article {
     text-align: center;
     padding: 5px;
+  }
+
+  strong {
+    font-size: 1.5em;
   }
   `;
 

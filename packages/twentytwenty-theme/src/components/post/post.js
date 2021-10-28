@@ -90,9 +90,12 @@ const Post = ({ state, actions, libraries }) => {
       {post.content && (
         <PostInner size="thin">
           <EntryContent>
+          <article>
             <img src={post.acf.image} />
             <div> {post.acf.description} </div>
-            <div> ${post.acf.price} </div>
+            <div>
+              <strong> ${post.acf.price} </strong>
+            </div>
             <button className="snipcart-add-item"
               data-item-name={post.acf.product_name}
               data-item-price={post.acf.price}
@@ -100,6 +103,7 @@ const Post = ({ state, actions, libraries }) => {
               data-item-id={post.id}
               data-item-description={post.acf.description}
             >Add to cart</button>
+          </article>
           </EntryContent>
         </PostInner>
       )}

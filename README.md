@@ -4,7 +4,7 @@
 
 This repo and tutorial show you how to build a static WordPress e-commerce site with Frontity & Snipcart.
 
-Please note that this demo uses Snipcart's latest version, the v3.2.2.
+Please note that this demo uses Snipcart's v3.2.2.
 
 > Read the tutorial [here](https://snipcart.com/blog/frontity-static-wordpress)
 
